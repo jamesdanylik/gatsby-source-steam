@@ -1,6 +1,6 @@
 {
   "name": "gatsby-source-steam",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Gatsby source plugin for building websites using Steam as a data source",
   "dependencies": {
     "gatsby-node-helpers": "^0.1.3",
