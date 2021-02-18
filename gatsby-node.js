@@ -18,9 +18,11 @@ function api(url) {
 
 function recentGamesUrl(options) {
 	var url = "http://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001/?format=json";
+
 	for (var property in options) {
 		url += '&' + property + '=' + options[property];
 	}
+
 	return url;
 }
 
@@ -28,7 +30,7 @@ exports.sourceNodes = function () {
 	var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(_ref, _ref2) {
 		var boundActionCreators = _ref.boundActionCreators;
 		var api_key = _ref2.api_key,
-		    user_id = _ref2.user_id;
+			user_id = _ref2.user_id;
 		var createNode, j;
 		return regeneratorRuntime.wrap(function _callee$(_context) {
 			while (1) {
@@ -41,19 +43,20 @@ exports.sourceNodes = function () {
 					case 3:
 						j = _context.sent;
 
-
-						j.response.games.map(function (game) {
-							createNode((0, _nodes.GameNode)({
-								id: game.appid,
-								name: game.name,
-								playtime_2weeks: game.playtime_2weeks,
-								playtime_forever: game.playtime_forever,
-								img_icon_url: game.img_icon_url,
-								img_logo_url: game.img_logo_url
-							}));
+						if (j.response.games.length > 0) {
+							j.response.games.map(function (game) {
+								createNode((0, _nodes.GameNode)({
+									id: game.appid,
+									name: game.name,
+									playtime_2weeks: game.playtime_2weeks,
+									playtime_forever: game.playtime_forever,
+									img_icon_url: game.img_icon_url,
+									img_logo_url: game.img_logo_url
+								}));
 						});
+					}
 
-						return _context.abrupt('return');
+					return _context.abrupt('return');
 
 					case 6:
 					case 'end':

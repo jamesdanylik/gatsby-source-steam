@@ -1,6 +1,13 @@
 # gatsby-source-steam
+This is a source plugin for GatsbyJS to pull information from the [Steam API](https://developer.valvesoftware.com/wiki/Steam_Web_API).
 
-This is a source plugin for GatsbyJS to pull information from the Steam API.  
+## Prerequisites
+Use of the plugin requires:
+ * a valid Steam ID 
+ * a valid Steam API Key
+
+## Obtaining an Steam Web API Key
+All use of the Steam Web API requires the use of an API Key. You can acquire one by [filling out this form](https://steamcommunity.com/dev/apikey). Use of the APIs also requires that you agree to the [Steam API Terms of Use](https://steamcommunity.com/dev/apiterms).
 
 ## Installation
 Install as a dependancy from npm.
