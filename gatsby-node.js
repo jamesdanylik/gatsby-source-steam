@@ -28,7 +28,7 @@ function recentGamesUrl(options) {
 
 exports.sourceNodes = function () {
 	var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(_ref, _ref2) {
-		var boundActionCreators = _ref.boundActionCreators;
+		var actions = _ref.actions;
 		var api_key = _ref2.api_key,
 			user_id = _ref2.user_id;
 		var createNode, j;
@@ -36,7 +36,7 @@ exports.sourceNodes = function () {
 			while (1) {
 				switch (_context.prev = _context.next) {
 					case 0:
-						createNode = boundActionCreators.createNode;
+						createNode = actions.createNode;
 						_context.next = 3;
 						return api(recentGamesUrl({ "key": api_key, "steamid": user_id }));
 
